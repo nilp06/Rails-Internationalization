@@ -9,8 +9,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   host: localhost
-  user: nil
-  password: Simform@123
+  user: <%= ENV['db_user'] %>
+  password: <%= ENV['db_password'] %>
 
 development:
   <<: *default
